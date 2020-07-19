@@ -1,0 +1,106 @@
+.about-us {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+
+    @media (min-width: $tablet) {
+        flex-flow: row nowrap;
+    }
+
+    @media (min-width: $tablet) and (max-width: $wide - 1px) {
+        padding: convertToRem(20px) convertToRem(8px) 0 convertToRem(24px);
+    }
+
+    @media (min-width: $wide) {
+        padding: convertToRem(7px) convertToRem(28px) 0 convertToRem(34px);
+    }
+
+    @media (max-width: $wide - 1px) {
+        [type="checkbox"] {
+            &:checked {
+                & ~ .about-us__paragraph {
+                    height: auto;
+                    overflow: visible;
+                    word-wrap: none;
+                }
+            }
+        }
+    }
+
+    &__description {
+        display: flex;
+        flex-flow: column nowrap;
+
+        @media (max-width: $tablet - 1px) {
+            padding: convertToRem(20px) convertToRem(16px) convertToRem(14px) convertToRem(16px);
+        }
+
+        @media (max-width: $wide - 1px) {
+            justify-content: space-between;
+        }
+
+        @media (min-width: $wide) {
+            padding-top: 14px;
+            padding-right: convertToRem(16px);
+        }
+
+        @media (min-width: $tablet) and (max-width: $wide) {
+            width: calc(100% - 360px);
+            padding-right: convertToRem(64px);
+        }
+    }
+
+    &__expand {
+        width: convertToRem(132px);
+    }
+
+    &__paragraph {
+        min-width: convertToRem(288px);
+        line-height: 129%;
+        font-size: convertToRem(14px);
+        letter-spacing: 0.2px;
+
+        &:first-of-type {
+            padding-bottom: convertToRem(16px);
+        }
+
+        &:last-of-type {
+            padding-bottom: convertToRem(10px);
+        }
+
+        @media (max-width: $tablet - 1px) {
+            &:last-of-type {
+                display: none;
+            }
+        }
+
+        @media (min-width: $wide) {
+            max-width: convertToRem(490px);
+        }
+
+        @media (max-width: $wide - 1px) {
+            &:last-of-type {
+                height: 35px;
+                overflow: hidden;
+            }
+
+            &:last-of-type > :last-child {
+                display: none;
+            }
+        }
+    }
+
+    &__image {
+        @media (min-width: $desktop) {
+            margin: 0 0 0 auto;
+        }
+        @media (max-width: $tablet - 1px) {
+            img {
+                min-width: 100%;
+            }
+        }
+        @media (min-width: $tablet) and (max-width: $wide - 1px) {
+            padding-right: 1.5rem;
+        }
+    }
+}

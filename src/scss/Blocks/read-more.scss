@@ -1,0 +1,15 @@
+.read-more {
+    background: url(../img/button/arrow.svg) no-repeat;
+    background-position: 8px center;
+    padding: 2px 2px 2px 24px;
+    min-width: convertToRem(124px);
+    min-height: convertToRem(24px);
+    cursor: pointer;
+
+    &:active,
+    &:focus,
+    &:hover {
+        outline: none;
+        box-shadow: 0 0 0 0.075rem #fff, 0 0 0 0.15rem $Project--Color-Focus;
+    }
+}

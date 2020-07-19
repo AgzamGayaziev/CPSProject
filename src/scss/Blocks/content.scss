@@ -1,0 +1,101 @@
+.content {
+    margin: 0 auto;
+    padding-bottom: 20px;
+
+    @media (max-width: $wide - 1px) {
+        padding-bottom: 32px;
+    }
+
+    @media (min-width: $wide) {
+        padding-bottom: 51px;
+        max-width: $desktop;
+    }
+
+    &__heading {
+        font-size: 1.75rem;
+        align-items: center;
+        letter-spacing: -0.6px;
+        font-weight: bold;
+        display: flex;
+
+        &::before {
+            content: url(../img/separator/separator.svg);
+            height: 40px;
+            transform: translateX(-24px);
+        }
+
+        @media (max-width: $tablet - 1px) {
+            padding: convertToRem(24px) convertToRem(16px);
+        }
+
+        @media (max-width: $wide - 1px) {
+            padding: convertToRem(24px);
+        }
+
+        @media (min-width: $wide) {
+            padding: convertToRem(42px) 0 0 24px;
+        }
+    }
+    &__navigation {
+        display: flex;
+
+        @media (max-width: $tablet - 1px) {
+            padding: 0 convertToRem(16px);
+        }
+
+        @media (min-width: $tablet) and (max-width: $wide - 1px) {
+            padding: 0 convertToRem(24px);
+        }
+    }
+
+    &__tabs {
+        overflow-x: auto;
+        display: flex;
+        padding-bottom: 2px;
+        font-size: convertToRem(16px);
+        font-weight: 500;
+
+        //Вооолшебные костыли для скрывания полосы прокрутки (как по тз) на экранах где пальцем тычут
+        //Вообще, мог ещё это запихнуть в медиа-запрос, на проверку того тыкают пальцем или нет, но думаю и так сойдет
+
+        -ms-overflow-style: none; /* IE 10+ */
+        scrollbar-width: none; /* Firefox */
+
+        /* Chromium based */
+        &::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        @media (min-width: $wide) {
+            flex-wrap: wrap;
+            padding: 8px 22px 0 26px;
+        }
+    }
+
+    &__tab {
+        flex: 0 0 auto;
+    }
+
+    &__link {
+        display: block;
+        color: $Project--Color-TextTabs;
+
+        border: 2px solid transparent;
+        border-radius: 6px;
+        padding: convertToRem(9px) convertToRem(17px) convertToRem(9px) convertToRem(12px);
+
+        &:active {
+            transform: translateY(2px);
+            border: 2px solid $Project--Color-BorderTabs;
+        }
+        &:hover,
+        &:focus {
+            border: 2px solid $Project--Color-BorderTabs;
+            background-color: $Project--Color-White;
+        }
+
+        /* Bug Fix */
+        user-select: none;
+    }
+}

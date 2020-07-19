@@ -1,0 +1,4 @@
+/// Make REM from PX
+@function convertToRem($size) {
+  @return $size / 16px * 1rem;
+}

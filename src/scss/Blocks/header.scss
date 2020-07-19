@@ -1,0 +1,18 @@
+.header {
+    margin: 0 auto;
+
+    @media (max-width: $tablet - 1px) {
+        padding: convertToRem(16px) convertToRem(16px);
+    }
+
+    @media (min-width: $tablet) and (max-width: $wide - 1px) {
+        padding: convertToRem(16px) convertToRem(24px);
+    }
+
+    @media (min-width: $wide) {
+        position: absolute;
+        padding-top: convertToRem(42px);
+        transform: translateX(730px);
+        max-width: $desktop;
+    }
+}

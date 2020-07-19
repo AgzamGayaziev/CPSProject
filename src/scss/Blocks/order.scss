@@ -1,0 +1,11 @@
+.order {
+    height: 2rem;
+    min-width: 7.5rem;
+    border-radius: 1rem;
+    justify-content: flex-start;
+    padding-left: 1rem;
+    color: $Project--Color-White;
+    text-transform: uppercase;
+    font-weight: bold;
+    background: url(../img/button/order.svg) no-repeat $Project--Color-Order right center;
+}

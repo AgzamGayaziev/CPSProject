@@ -1,0 +1,37 @@
+%ViewGrid {
+    $Grid-View: false;
+    $ViewGrid--Gutter: 8px !default;
+    $ViewGrid--Columns: 12 !default;
+    $ViewGrid--Container: 16px 24px 32px !default;
+    $ViewGrid--Color: rgba(255, 0, 0, 0.1) !default;
+
+    border: solid transparent;
+    border-width: 0 nth($ViewGrid--Container, 1) - $ViewGrid--Gutter / 2;
+
+    @media (min-width: $tablet) {
+        border-width: 0 nth($ViewGrid--Container, 2) - $ViewGrid--Gutter / 2;
+    }
+
+    @media (min-width: $wide) {
+        border-width: 0 nth($ViewGrid--Container, 3) - $ViewGrid--Gutter / 2;
+    }
+
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-image: repeating-linear-gradient(to right, transparent, transparent $ViewGrid--Gutter, $ViewGrid--Color 0, $ViewGrid--Color 100% / $ViewGrid--Columns);
+
+    background-position: 0px - $ViewGrid--Gutter / 2;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+// @if ($Grid-View == true) {
+//     &::before {
+//         @extend %ViewGrid;
+//     }
+// }

@@ -1,0 +1,40 @@
+//* Breakpoints
+$Project--Breakpoints: (
+    mobile: 576px,
+    tablet: 768px,
+    desktop: 1120px,
+    wide: 1440px,
+);
+$tablet: map-get(
+    $map: $Project--Breakpoints,
+    $key: tablet,
+);
+$desktop: map-get(
+    $map: $Project--Breakpoints,
+    $key: desktop,
+);
+$wide: map-get(
+    $map: $Project--Breakpoints,
+    $key: wide,
+);
+
+//* Styles
+$Project--Color-White: #ffffff;
+$Project--Color-DarkBackground: #f2f2f2;
+$Project--Color-TextTabs: #7e7e82;
+$Project--Color-Order: #ff3e79;
+$Project--Color-BorderTabs: #b8ffec;
+$Project--Color-Focus: #0069d4;
+$Project--Color-TextPrimary: #1b1c21;
+
+//* Wrapper
+$Wrapper--Max-Container: 1440px;
+$Wrapper--Min-Container: 320px;
+
+//* Global replace
+html {
+    font-size: 16px;
+}
+body {
+    font-family: "TT Lakes", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
