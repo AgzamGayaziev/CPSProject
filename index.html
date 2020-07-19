@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Block 1.4</title>
+    <link href="style.css" rel="stylesheet"></head>
+
+    <body>
+        <div class="wrapper">
+            <nav class="menu">
+                <header class="menu__header">
+                    <ul class="menu__list menu__list--header">
+                        <li class="menu__item menu__item--close">
+                            <button class="menu__button" id="closeMenu" type="button">
+                                <img src="./img/menu/close.svg" alt="Закрыть">
+                            </button>
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__button menu__button--logo" href="#">
+                                <img src="./img/navigation/logo.svg" alt="Логотип">
+                            </a>
+                        </li>
+                        <li class="menu__item menu__item--find">
+                            <button class="menu__button" type="button">
+                                <img src="./img/menu/find.svg" alt="Поиск">
+                            </button>
+                        </li>
+                    </ul>
+                </header>
+                <div class="menu__main">
+                    <ul class="menu__list menu__list--main">
+                        <li class="menu__item menu__item--page menu__item--active-page">
+                            <a href="#" class="menu__link">Ремонт техники</a>
+                        </li>
+                        <li class="menu__item menu__item--page">
+                            <a href="#" class="menu__link">Услуги и сервисы</a>
+                        </li>
+                        <li class="menu__item menu__item--page">
+                            <a href="#" class="menu__link">Корпоративным клиентам</a>
+                        </li>
+                        <li class="menu__item menu__item--page">
+                            <a href="#" class="menu__link">Продавцам техники</a>
+                        </li>
+                        <li class="menu__item menu__item--page">
+                            <a href="#" class="menu__link">Партнерам</a>
+                        </li>
+                        <li class="menu__item menu__item--page">
+                            <a href="#" class="menu__link">Производителям</a>
+                        </li>
+                        <li class="menu__item menu__item--page">
+                            <a href="#" class="menu__link">Наши сервисные центры</a>
+                        </li>
+                        <li class="menu__item menu__item--page">
+                            <a href="#" class="menu__link">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+                <footer class="menu__footer">
+                    <ul class="menu__list">
+                        <li class="menu__item menu__item--action">
+                            <button class="menu__button" type="button">
+                                <img src="./img/navigation/call.svg" alt="Меню">
+                            </button>
+                        </li>
+                        <li class="menu__item menu__item--action">
+                            <button class="menu__button" type="button">
+                                <img src="./img/navigation/chat.svg" alt="Меню">
+                            </button>
+                        </li>
+                        <li class="menu__item menu__item--action">
+                            <button class="menu__button" type="button">
+                                <img src="./img/navigation/profile.svg" alt="Меню">
+                            </button>
+                        </li>
+                    </ul>
+                    <div class="menu__list menu__list--contacts">
+                        <a class="menu__item menu__item--mail" href="mailto:mail@cps.com">mail@cps.com</a>
+                        <a class="menu__item menu__item--tel" href="tel:+88008908900">8 800 890 8900</a>
+                    </div>
+                    <ul class="menu__list menu__list--lang">
+                        <li class="menu__item menu__item--active-lang">
+                            <button class="menu__lang" type="button">RU</button>
+                        </li>
+                        <li class="menu__item">
+                            <button class="menu__lang" type="button">EN</button>
+                        </li>
+                        <li class="menu__item">
+                            <button class="menu__lang" type="button">CH</button>
+                        </li>
+                    </ul>
+                </footer>
+            </nav>
+
+            <div class="wrapper__inner">
+                <header class="header">
+                    <nav class="header__navigation navigation">
+                        <ul class="navigation__list navigation__list--menu">
+                            <li class="navigation__item">
+                                <button class="navigation__button" id="openMenu" type="button">
+                                    <img src="./img/navigation/burger.svg" alt="Меню">
+                                </button>
+                            </li>
+                            <li class="navigation__item">
+                                <a class="navigation__button navigation__button--logo" href="#">
+                                    <img src="./img/navigation/logo.svg" alt="Логотип">
+                                </a>
+                            </li>
+                        </ul>
+
+                        <ul class="navigation__list navigation__list--contacts">
+                            <li class="navigation__item">
+                                <a href="tel:+88005553535" class="navigation__button">
+                                    <img src="./img/navigation/call.svg" alt="Позвонить">
+                                </a>
+                            </li>
+                            <li class="navigation__item">
+                                <button class="navigation__button" type="button">
+                                    <img src="./img/navigation/chat.svg" alt="Написать">
+                                </button>
+                            </li>
+                            <li class="navigation__item">
+                                <button class="navigation__button" type="button">
+                                    <img src="./img/navigation/profile.svg" alt="Профиль">
+                                </button>
+                            </li>
+                        </ul>
+
+                        <ul class="navigation__list navigation__list--forms">
+                            <li class="navigation__item">
+                                <button class="navigation__button" data-tooltip="Оставить заявку" type="button">
+                                    <img src="./img/navigation/repair.svg" alt="Оставить заявку">
+                                </button>
+                            </li>
+                            <li class="navigation__item">
+                                <button class="navigation__button" data-tooltip="Статус ремонта" type="button">
+                                    <img src="./img/navigation/status.svg" alt="Статус ремонта">
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+                </header>
+
+                <main class="main">
+                    <section class="content">
+                        <h2 class="content__heading">Услуги и сервисы</h2>
+                        <nav class="content__navigation">
+                            <ul class="content__tabs">
+                                <li class="content__tab">
+                                    <a href="#" class="content__link">Ремонтируемые устройства</a>
+                                </li>
+                                <li class="content__tab">
+                                    <a href="#" class="content__link">Дополнительные услуги</a>
+                                </li>
+                                <li class="content__tab">
+                                    <a href="#" class="content__link">Цены на услуги</a>
+                                </li>
+                                <li class="content__tab">
+                                    <a href="#" class="content__link">Адреса сервисных центров</a>
+                                </li>
+                                <li class="content__tab">
+                                    <a href="#" class="content__link">Специальные цены</a>
+                                </li>
+                                <li class="content__tab">
+                                    <a href="#" class="content__link">Отзывы</a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                        <header class="content__about about-us">
+                            <div class="about-us__description">
+                                <input class="visually-hidden" aria-hidden="true" type="checkbox" name="Читать далее" id="readMore">
+                                <p class="about-us__paragraph">
+                                    Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.
+                                </p>
+                                <p class="about-us__paragraph">Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера что, подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою очередь,советуют нас родным и близким.</p>
+                                <label tabindex="0" class="about-us__expand read-more" for="readMore">
+                                    Читать далее
+                                </label>
+                            </div>
+                            <figure class="about-us__image" title="Информация о CPS">
+                                <picture>
+                                    
+                                    <source media="(min-width: 1440px)" srcset="./img/about-us/desktop/signboard.png, ./img/about-us/desktop/signboard@2x.png 2x, ./img/about-us/desktop/signboard@3x.png 3x">
+                                    
+                                    <source media="(min-width: 768px)" srcset="./img/about-us/tablet/signboard.png, ./img/about-us/tablet/signboard@2x.png 2x, ./img/about-us/tablet/signboard@3x.png 3x">
+                                    
+                                    <img srcset="./img/about-us/mobile/signboard@2x.png 2x, ./img/about-us/mobile/signboard@3x.png 3x" src="./img/about-us/mobile/signboard.png" alt="Фото вывески CPS">
+                                </picture>
+                            </figure>
+                        </header>
+                    </section>
+                </main>
+            </div>
+        </div>
+    <script src="./js/bundle.js"></script></body>
+</html>
