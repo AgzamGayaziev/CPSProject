@@ -36,7 +36,9 @@
         }
 
         @media (max-width: $wide - 1px) {
-            justify-content: space-between;
+            &:nth-child(2n + 1){
+                padding-top: convertToRem(24px);
+            }
         }
 
         @media (min-width: $wide) {
@@ -52,6 +54,7 @@
 
     &__expand {
         width: convertToRem(132px);
+        margin-top: 8px;
     }
 
     &__paragraph {

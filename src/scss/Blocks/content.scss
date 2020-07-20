@@ -48,7 +48,7 @@
         }
     }
 
-    &__tabs {
+    &__list {
         overflow-x: auto;
         display: flex;
         padding-bottom: 2px;
@@ -73,7 +73,7 @@
         }
     }
 
-    &__tab {
+    &__item {
         flex: 0 0 auto;
     }
 
