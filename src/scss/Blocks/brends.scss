@@ -1,3 +1,5 @@
+$logoNames: (Acer, Lenovo, Apple, Samsung, HP, ViewSonic, Sony, Bosch, Lenovo, Acer, Apple, Samsung);
+
 .brends {
     min-height: 200px;
 
@@ -25,8 +27,6 @@
         width: convertToRem(240px);
         height: convertToRem(72px);
         padding: convertToRem(16px);
-        //* Магическое заклинание по вызову кнопки (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
-        background: url(../img/brands/Lenovo.jpg) no-repeat 16px center, url(../img/brands/button.svg) no-repeat 184px center, $Project--Color-White;
         border-radius: 5%;
         cursor: pointer;
         border: solid 2px transparent;
@@ -34,7 +34,6 @@
 
         @media (min-width: $tablet) and (max-width: $wide - 1px) {
             width: convertToRem(224px);
-            background: url(../img/brands/Lenovo.jpg) no-repeat 16px center, url(../img/brands/button.svg) no-repeat 168px center, $Project--Color-White;
         }
 
         &:active {
@@ -46,6 +45,27 @@
         &:hover {
             outline: none;
             box-shadow: 0 0 0 0.075rem #fff, 0 0 0 0.15rem $Project--Color-Focus;
+        }
+    }
+
+    &__item {
+        //* Магическое заклинание для призыва кнопки (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
+        $i: 1;
+        @each $logo in $logoNames {
+            &:nth-of-type(#{$i})>.brends__button {
+                background: url(../img/brands/#{$logo}.jpg) no-repeat 16px center, url(../img/brands/button.svg) no-repeat 184px center, $Project--Color-White;
+            }
+            $i: $i + 1;
+        }
+
+        @media (min-width: $tablet) and (max-width: $wide - 1px) {
+            $i: 1;
+            @each $logo in $logoNames {
+                &:nth-of-type(#{$i})>.brends__button {
+                    background: url(../img/brands/#{$logo}.jpg) no-repeat 16px center, url(../img/brands/button.svg) no-repeat 168px center, $Project--Color-White;
+                }
+                $i: $i + 1;
+            }
         }
     }
 }
