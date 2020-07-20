@@ -1,0 +1,80 @@
+.swiper {
+    overflow: hidden;
+    min-height: max-content;
+
+    &__wrapper {
+        display: flex;
+        transition-property: transform;
+        padding: 0 0 25px 16px;
+
+        @media (min-width: $tablet) {
+            padding: 24px 0;
+            flex-flow: row wrap;
+        }
+
+        @media (min-width: $tablet) {
+            height: 190px;
+            overflow: hidden;
+        }
+    }
+
+    &__slide {
+        flex-shrink: 0;
+        transition-property: transform;
+        width: auto !important;
+
+        @media (min-width: $tablet) {
+            padding-left: 24px;
+            padding-bottom: 16px;
+        }
+    }
+
+    &__pagination {
+        text-align: center;
+        transition: 300ms opacity;
+        transform: translate3d(0, 0, 0);
+
+        @media (min-width: $tablet) {
+            display: none;
+        }
+    }
+
+    &__bullet {
+        width: 12px;
+        height: 12px;
+        display: inline-block;
+        border-radius: 100%;
+        background: $Project--Color-SwiperBullet;
+
+        &:nth-child(1n + 2) {
+            margin-left: 12px;
+        }
+
+        &--active {
+            background: $Project--Color-SwiperBulletActive;
+        }
+    }
+
+    &__expand {
+        display: none;
+
+        @media (min-width: $tablet) {
+            display: block;
+            margin: 24px;
+            width: 8.25rem;
+        }
+    }
+
+    [type="checkbox"] {
+        &:checked {
+            & ~ .swiper__wrapper {
+                height: auto;
+                overflow: visible;
+            }
+
+            & ~ .swiper__expand{
+                margin-top: 0;
+            }
+        }
+    }
+}

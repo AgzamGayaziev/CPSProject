@@ -21,7 +21,7 @@
                 & ~ .about-us__paragraph {
                     height: auto;
                     overflow: visible;
-                    word-wrap: none;
+                    display: block;
                 }
             }
         }

@@ -1,0 +1,51 @@
+.brends {
+    min-height: 200px;
+
+    &__header {
+        min-height: 56px;
+        background: linear-gradient(270deg, #f8f8f8 0%, #ffffff 98.61%);
+
+        @media (min-width: $tablet) and (max-width: $desktop - 1px) {
+            background: linear-gradient(90deg, #f8f8f8 1.39%, #ffffff 100%);
+        }
+    }
+
+    &__title {
+        font-size: convertToRem(16px);
+        letter-spacing: -0.2px;
+        text-transform: uppercase;
+        color: $Project--Color-TextTabs;
+        font-weight: 400;
+        line-height: 150%;
+        padding: convertToRem(16px);
+    }
+
+    &__button {
+        box-sizing: border-box;
+        width: convertToRem(240px);
+        height: convertToRem(72px);
+        padding: convertToRem(16px);
+        //* Магическое заклинание по вызову кнопки (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧
+        background: url(../img/brands/Lenovo.jpg) no-repeat 16px center, url(../img/brands/button.svg) no-repeat 184px center, $Project--Color-White;
+        border-radius: 5%;
+        cursor: pointer;
+        border: solid 2px transparent;
+        margin-top: 2px;
+
+        @media (min-width: $tablet) and (max-width: $wide - 1px) {
+            width: convertToRem(224px);
+            background: url(../img/brands/Lenovo.jpg) no-repeat 16px center, url(../img/brands/button.svg) no-repeat 168px center, $Project--Color-White;
+        }
+
+        &:active {
+            transform: translateY(2px);
+            filter: saturate(150%);
+        }
+
+        &:focus,
+        &:hover {
+            outline: none;
+            box-shadow: 0 0 0 0.075rem #fff, 0 0 0 0.15rem $Project--Color-Focus;
+        }
+    }
+}
