@@ -46,7 +46,8 @@ class ModalConstructor {
 const menu = new ModalConstructor(".menu", "menu--active", "#openMenu", "#closeMenu *");
 menu.activate();
 
-const feedback = new ModalConstructor(".feedback", "feedback--active", "#openFeedback", "#closeForm *");
+const feedback = new ModalConstructor("#modalFeedback", "modal--active", "#openFeedback", "#closeFeedback *");
 feedback.activate();
 
-
+const call = new ModalConstructor("#modalCall", "modal--active", "#openCall", "#closeCall *");
+call.activate();

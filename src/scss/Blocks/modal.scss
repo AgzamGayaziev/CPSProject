@@ -1,4 +1,4 @@
-.feedback {
+.modal {
     display: flex;
     flex-flow: column nowrap;
     background-color: $Project--Color-White;
@@ -10,7 +10,7 @@
     top: 0;
     right: 0;
     transform: translateX(600px);
-    transition: transform 0.5s ease-in;
+    transition: transform 0.3s ease-in;
 
     @media (min-width: $tablet) {
         padding-top: 40px;
@@ -66,13 +66,13 @@
         }
     }
 
-    .feedback__message {
+    .modal__message {
         min-height: 100px;
         padding-top: 12px;
         resize: none;
     }
 
-    .feedback__agreement {
+    .modal__agreement {
         font-size: 14px;
         line-height: 114%;
         color: $Project--Color-TextTabs;
@@ -80,12 +80,12 @@
         padding-right: convertToRem(14px);
     }
 
-    .feedback__link {
+    .modal__link {
         color: $Project--Color-Order;
         text-decoration: none;
     }
 
-    [type="submit"] {
+    &__submit {
         margin-left: auto;
         font-size: 13px;
         height: 2rem;
