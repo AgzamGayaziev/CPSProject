@@ -11,7 +11,8 @@
     }
 
     &--disabled {
-        &::before {
+        position: relative;
+        &:before {
             content: "";
             position: absolute;
             background-color: rgba($Project--Color-White, 0.9);

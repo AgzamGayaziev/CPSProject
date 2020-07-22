@@ -128,7 +128,7 @@
 
                         <ul class="navigation__list navigation__list--forms">
                             <li class="navigation__item">
-                                <button class="navigation__button" data-tooltip="Оставить заявку" type="button">
+                                <button class="navigation__button" data-tooltip="Оставить заявку" id="openFeedback" type="button">
                                     <img src="./img/navigation/repair.svg" alt="Оставить заявку" />
                                 </button>
                             </li>
@@ -249,6 +249,85 @@
                             </label>
                         </div>
                     </section>
+                    <section class="brends">
+                        <header class="brends__header">
+                            <h2 class="brends__title">Ремонт различных видов техники</h2>
+                        </header>
+                        <div class="brends__swiper swiper">
+                            <input class="visually-hidden" aria-hidden="true" type="checkbox" name="Показать все" id="showAll" />
+                            <ul class="swiper__wrapper">
+                                <li class="swiper__slide brends__item">
+                                    <button class="brends__button" type="button"></button>
+                                </li>
+                                <li class="swiper__slide brends__item">
+                                    <button class="brends__button" type="button"></button>
+                                </li>
+                                <li class="swiper__slide brends__item">
+                                    <button class="brends__button" type="button"></button>
+                                </li>
+                                <li class="swiper__slide brends__item">
+                                    <button class="brends__button" type="button"></button>
+                                </li>
+                                <li class="swiper__slide brends__item">
+                                    <button class="brends__button" type="button"></button>
+                                </li>
+                                <li class="swiper__slide brends__item">
+                                    <button class="brends__button" type="button"></button>
+                                </li>
+                                <li class="swiper__slide brends__item">
+                                    <button class="brends__button" type="button"></button>
+                                </li>
+                                <li class="swiper__slide brends__item">
+                                    <button class="brends__button" type="button"></button>
+                                </li>
+                            </ul>
+                            <div class="swiper__pagination"></div>
+                            <label tabindex="0" class="swiper__expand expander" for="showAll">
+                                Показать все
+                            </label>
+                        </div>
+                    </section>
+                    <section class="brends">
+                        <header class="brends__header">
+                            <h2 class="brends__title">Цены на услуги</h2>
+                        </header>
+                        <div class="brends__swiper swiper">
+                            <input class="visually-hidden" aria-hidden="true" type="checkbox" name="Показать все" id="showAll" />
+                            <ul class="swiper__wrapper">
+                                <li class="swiper__slide brends__item">
+                                    <button class="brends__button" type="button"></button>
+                                </li>
+                                <li class="swiper__slide brends__item">
+                                    <button class="brends__button" type="button"></button>
+                                </li>
+                                <li class="swiper__slide brends__item">
+                                    <button class="brends__button" type="button"></button>
+                                </li>
+                                <li class="swiper__slide brends__item">
+                                    <button class="brends__button" type="button"></button>
+                                </li>
+                                <li class="swiper__slide brends__item">
+                                    <button class="brends__button" type="button"></button>
+                                </li>
+                            </ul>
+                            <div class="swiper__pagination"></div>
+                            <label tabindex="0" class="swiper__expand expander" for="showAll">
+                                Показать все
+                            </label>
+                        </div>
+                    </section>
+                    <form action="/" method="POST" class="feedback">
+                        <button class="feedback__button" id="closeForm" type="button">
+                            <img src="./img/menu/close.svg" alt="Закрыть" />
+                        </button>
+                        <h2 class="feedback__heading">Обратная связь</h2>
+                        <input placeholder="Имя" type="text" name="name" id="" class="feedback__name" />
+                        <input placeholder="Телефон" type="tel" name="phone" id="" class="feedback__phone" />
+                        <input placeholder="Электронная почта" type="email" name="mail" id="" class="feedback__mail" />
+                        <textarea type="text" placeholder="Сообщение" name="" id="" class="feedback__message"></textarea>
+                        <p class="feedback__agreement">Нажимая “отправить”, вы даете согласие <a class="feedback__link" href="#">на обработку персональных данных</a> и соглашаетесь с нашей <a class="feedback__link" href="#"> политикой конфиденциальности</a></p>
+                        <button type="submit">Отправить</button>
+                    </form>
                 </main>
             </div>
         </div>

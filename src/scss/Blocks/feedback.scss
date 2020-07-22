@@ -1,0 +1,118 @@
+.feedback {
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: $Project--Color-White;
+    min-width: convertToRem(320px);
+    min-height: 100vh;
+    max-width: 440px;
+    padding: 0 32px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(600px);
+    transition: transform 0.5s ease-in;
+
+    @media (min-width: $tablet) {
+        padding-top: 40px;
+    }
+
+    &--active {
+        transform: translateX(0);
+        height: 100%;
+        box-shadow: 16px 0px 52px rgba(14, 24, 80, 0.2), -2px 0px 4px rgba(69, 79, 126, 0.02);
+    }
+
+    &__button {
+        margin: 24px 0 30px 0;
+        background-color: transparent;
+        border-radius: 100%;
+        cursor: pointer;
+        border: solid 1px transparent;
+        padding: 0;
+        width: 42px;
+
+        &:active {
+            transform: translateY(2px);
+            @media (min-width: $tablet) {
+                transform: translateX(-110px) translateY(2px);
+            }
+        }
+
+        &:focus,
+        &:hover {
+            outline: none;
+            box-shadow: 0 0 0 0.075rem #fff, 0 0 0 0.2rem $Project--Color-Focus;
+        }
+
+        @media (min-width: $tablet) {
+            margin: 0;
+            position: absolute;
+            padding: 0;
+            transform: translateX(-110px);
+        }
+    }
+
+    input,
+    textarea {
+        margin-bottom: 16px;
+        min-height: 48px;
+        border: 1px solid #eaeaea;
+        border-radius: 8px;
+        padding: 0 0 0 16px;
+        font-size: 16px;
+
+        &::placeholder {
+            color: #b5b6bc !important;
+        }
+    }
+
+    .feedback__message {
+        min-height: 100px;
+        padding-top: 12px;
+        resize: none;
+    }
+
+    .feedback__agreement {
+        font-size: 14px;
+        line-height: 114%;
+        color: $Project--Color-TextTabs;
+        font-weight: 500;
+        padding-right: convertToRem(14px);
+    }
+
+    .feedback__link {
+        color: $Project--Color-Order;
+        text-decoration: none;
+    }
+
+    [type="submit"] {
+        margin-left: auto;
+        font-size: 13px;
+        height: 2rem;
+        width: 136px;
+        border-radius: 16px;
+        padding-left: 18px;
+        text-align: left;
+        color: $Project--Color-White;
+        text-transform: uppercase;
+        font-weight: bold;
+        border: 1px solid transparent;
+        background: url(../img/button/order.svg) no-repeat $Project--Color-Order 100px center;
+        margin-top: 23px;
+    }
+
+    &__heading {
+        font-size: convertToRem(24px);
+        align-items: center;
+        letter-spacing: -0.6px;
+        font-weight: bold;
+        display: flex;
+        padding-bottom: 24px;
+
+        &::before {
+            content: url(../img/separator/separator.svg);
+            height: 40px;
+            transform: translateX(-32px);
+        }
+    }
+}
