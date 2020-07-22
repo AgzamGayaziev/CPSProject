@@ -8,15 +8,17 @@
     padding: 0 32px;
     position: absolute;
     top: 0;
-    right: 0;
+    right: 5000px;
     transform: translateX(600px);
     transition: transform 0.3s ease-in;
+    z-index: 1;
 
     @media (min-width: $tablet) {
         padding-top: 40px;
     }
 
     &--active {
+        right: 0;
         transform: translateX(0);
         height: 100%;
         box-shadow: 16px 0px 52px rgba(14, 24, 80, 0.2), -2px 0px 4px rgba(69, 79, 126, 0.02);

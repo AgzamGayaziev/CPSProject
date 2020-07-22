@@ -1,3 +1,147 @@
-.price{
-    
+.price {
+    padding: 0 24px;
+
+    .price__headers {
+        font-size: 14px;
+        line-height: 114%;
+        opacity: 0.72;
+        mix-blend-mode: normal;
+        color: #7e7e82;
+        font-weight: 500;
+
+        @media (max-width: $tablet - 1px) {
+            display: none;
+        }
+
+        &--mobile {
+            display: none;
+            @media (max-width: $tablet - 1px) {
+                display: inline-block;
+                padding-bottom: 4px;
+            }
+        }
+    }
+
+    .swiper__wrapper {
+        overflow: visible;
+        height: auto;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 129%;
+        letter-spacing: 0.2px;
+        color: $Project--Color-TextPrimary;
+    }
+
+    &__list {
+    }
+
+    &__table {
+        display: flex;
+        flex-direction: column;
+
+        @media (min-width: $tablet) {
+            flex-direction: row;
+            width: 100%;
+            padding: 16px 0;
+            border-bottom: 1px solid #eaeaea;
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+
+        &--noborder {
+            padding: 16px 10px 16px 16px;
+            border-bottom: none;
+        }
+    }
+
+    &__cell {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 1rem;
+
+        @media (min-width: $tablet) {
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0;
+
+            &:first-child {
+                flex: 0 0 55%;
+            }
+
+            &:nth-child(2) {
+                flex: 0 0 13%;
+            }
+
+            &:last-child {
+                flex: 0 0 32%;
+                justify-content: space-between;
+            }
+        }
+
+        @media (min-width: $wide) {
+            &:first-child {
+                flex: 0 0 45%;
+            }
+
+            &:nth-child(2) {
+                flex: 0 0 23%;
+            }
+
+            &:last-child {
+                flex: 0 0 32%;
+                justify-content: space-between;
+            }
+        }
+
+        @media (max-width: $tablet - 1px) {
+            max-width: 178px;
+
+            &:last-child {
+                padding: 0 0 4px 0;
+            }
+        }
+    }
+
+    &__button {
+        font-size: 12px;
+        height: 2rem;
+        width: 119px;
+        border-radius: 16px;
+        padding-left: 18px;
+        text-align: left;
+        color: $Project--Color-White;
+        text-transform: uppercase;
+        font-weight: bold;
+        border: 1px solid transparent;
+        background: url(../img/button/order.svg) no-repeat $Project--Color-Order 85px center;
+
+        @media (max-width: $tablet - 1px) {
+            position: absolute;
+            align-self: flex-end;
+            transform: translateX(50px) translateY(10px);
+        }
+    }
+
+    &__wrapper {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+
+        min-width: convertToRem(260px);
+        min-height: convertToRem(200px);
+        padding: convertToRem(16px) convertToRem(10px) convertToRem(16px) convertToRem(16px);
+        border-radius: 6px;
+        margin-top: 2px;
+        background-color: $Project--Color-White;
+
+        @media (min-width: $tablet) {
+            min-width: 100%;
+            min-height: max-content;
+        }
+    }
 }
