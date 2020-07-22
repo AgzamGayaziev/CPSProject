@@ -1,0 +1,29 @@
+.repair {
+    &__button {
+        box-sizing: border-box;
+        display: flex;
+        width: convertToRem(240px);
+        height: convertToRem(160px);
+        padding: convertToRem(16px);
+        border-radius: 5%;
+        cursor: pointer;
+        border: solid 2px transparent;
+        background: url(../img/brands/button.svg) no-repeat 180px 102px $Project--Color-White;
+        margin-top: 2px;
+
+        @media (min-width: $tablet) and (max-width: $wide - 1px) {
+            width: convertToRem(224px);
+        }
+
+        &:active {
+            transform: translateY(2px);
+            filter: saturate(150%);
+        }
+
+        &:focus,
+        &:hover {
+            outline: none;
+            box-shadow: 0 0 0 0.075rem #fff, 0 0 0 0.15rem $Project--Color-Focus;
+        }
+    }
+}

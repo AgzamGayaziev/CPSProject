@@ -1,3 +1,23 @@
-.section{
-    
+.section {
+    min-height: 200px;
+    padding-bottom: 24px;
+
+    &__header {
+        min-height: 56px;
+        padding-bottom: 16px;
+    }
+
+    &__title {
+        font-size: convertToRem(16px);
+        letter-spacing: -0.2px;
+        text-transform: uppercase;
+        color: $Project--Color-TextTabs;
+        font-weight: 400;
+        line-height: 150%;
+        padding: convertToRem(16px);
+        background: linear-gradient(270deg, #f8f8f8 0%, #ffffff 98.61%);
+        @media (min-width: $tablet) and (max-width: $desktop - 1px) {
+            background: linear-gradient(90deg, #f8f8f8 1.39%, #ffffff 100%);
+        }
+    }
 }
