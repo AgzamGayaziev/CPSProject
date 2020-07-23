@@ -3,6 +3,7 @@ $logoNames: (Acer, Lenovo, Apple, Samsung, HP, ViewSonic, Sony, Bosch, Lenovo, A
 .brends {
     &__button {
         box-sizing: border-box;
+        display: flex;
         width: convertToRem(240px);
         height: convertToRem(72px);
         padding: convertToRem(16px);

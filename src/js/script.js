@@ -1,5 +1,5 @@
 const wrapper = document.querySelector(".wrapper");
-const buttonEscape = 27;
+const ESC_KEYCODE = 27;
 
 class ModalConstructor {
     constructor(element, activeElement, openButton, closeButton) {
@@ -25,12 +25,11 @@ class ModalConstructor {
 
         const awaitModalClose = (e) => {
             e.preventDefault();
-            if (e.keyCode === buttonEscape || e.target === wrapper || e.target === this.closeButton) {
+            if (e.keyCode === ESC_KEYCODE || e.target === wrapper || e.target === this.closeButton) {
                 window.removeEventListener("keydown", awaitModalClose);
                 window.addEventListener("click", awaitModalClose);
                 this.element.classList.remove(this.activeElement);
                 wrapper.classList.remove("wrapper--disabled");
-
                 awaitModalOpen();
             }
         };

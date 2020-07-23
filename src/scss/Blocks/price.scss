@@ -26,7 +26,7 @@
 
     .swiper__wrapper {
         overflow: visible;
-        height: auto;
+        max-height: max-content;
     }
 
     p {
@@ -43,6 +43,7 @@
         min-height: 200px;
         padding: 16px;
         justify-content: space-between;
+        margin: 0;
 
         @media (max-width: $tablet - 1px) {
             background-color: $Project--Color-White;
