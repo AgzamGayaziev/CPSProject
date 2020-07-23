@@ -1,0 +1,48 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    background-color: $Project--Color-DarkBackground;
+
+    padding-bottom: 20px;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    @media (min-width: $tablet) {
+        flex-direction: row;
+    }
+
+    & > :nth-child(1n) {
+        padding-top: 1rem;
+
+        @media (min-width: $tablet) {
+            flex: 0 0 100% / 3 * 1;
+        }
+    }
+
+    &__title {
+        font-size: 14px;
+        line-height: 114%;
+        text-align: center;
+        color: $Project--Color-TextTabs;
+        mix-blend-mode: normal;
+        opacity: 0.72;
+
+        @media (min-width: $tablet) {
+        }
+    }
+
+    &__link {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    @media (min-width: $tablet) {
+        &__copyright {
+            text-align: left;
+        }
+
+        &__public-offer {
+            text-align: right;
+        }
+    }
+}

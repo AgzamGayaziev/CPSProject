@@ -15,7 +15,11 @@
     },
     "homepage": "https://github.com/MeloncholyShiro/CPSProject#readme",
     "dependencies": {
-        "swiper": "^6.0.4"
+        "img-loader": "^3.0.1",
+        "loading-attribute-polyfill": "^1.5.4",
+        "svg-url-loader": "^6.0.0",
+        "swiper": "^6.0.4",
+        "url-loader": "^4.1.0"
     },
     "devDependencies": {
         "@babel/core": "7.10.5",

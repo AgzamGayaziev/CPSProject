@@ -19,8 +19,7 @@
         [type="checkbox"] {
             &:checked {
                 & ~ .about-us__paragraph {
-                    height: auto;
-                    overflow: visible;
+                    max-height: 500px;
                     display: block;
                 }
             }
@@ -62,6 +61,7 @@
         line-height: 129%;
         font-size: convertToRem(14px);
         letter-spacing: 0.2px;
+        transition: max-height 1s cubic-bezier(0.86, 0, 0.07, 1);
 
         &:first-of-type {
             padding-bottom: convertToRem(16px);
@@ -83,7 +83,7 @@
 
         @media (max-width: $wide - 1px) {
             &:last-of-type {
-                height: 35px;
+                max-height: 35px;
                 overflow: hidden;
             }
 
