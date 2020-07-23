@@ -1,5 +1,7 @@
 .price {
-    padding: 0 24px;
+    @media (min-width: $tablet) {
+        padding: 0 24px;
+    }
 
     .price__headers {
         font-size: 14px;
@@ -34,18 +36,26 @@
         color: $Project--Color-TextPrimary;
     }
 
-    &__list {
-    }
-
     &__table {
         display: flex;
         flex-direction: column;
+        min-width: 260px;
+        min-height: 200px;
+        padding: 16px;
+        justify-content: space-between;
+
+        @media (max-width: $tablet - 1px) {
+            background-color: $Project--Color-White;
+            border-radius: 6px;
+        }
 
         @media (min-width: $tablet) {
             flex-direction: row;
-            width: 100%;
+            min-width: 100%;
+            min-height: 100%;
             padding: 16px 0;
             border-bottom: 1px solid #eaeaea;
+            padding: 16px 0 16px 0;
 
             &:last-child {
                 border-bottom: none;
@@ -53,8 +63,14 @@
         }
 
         &--noborder {
-            padding: 16px 10px 16px 16px;
+            // padding: 16px 10px 16px 16px;
+            padding: 31px 10px 24px 22px;
             border-bottom: none;
+            background-color: transparent;
+
+            @media (max-width: $tablet - 1px) {
+                display: none;
+            }
         }
     }
 
@@ -119,29 +135,87 @@
         font-weight: bold;
         border: 1px solid transparent;
         background: url(../img/button/order.svg) no-repeat $Project--Color-Order 85px center;
+        cursor: pointer;
+
+        &:active {
+            transform: translateY(2px);
+            filter: saturate(150%);
+        }
+
+        &:focus,
+        &:hover {
+            outline: none;
+            box-shadow: 0 0 0 0.075rem #fff, 0 0 0 0.2rem $Project--Color-Focus;
+        }
 
         @media (max-width: $tablet - 1px) {
             position: absolute;
             align-self: flex-end;
             transform: translateX(50px) translateY(10px);
+
+            &:active {
+                transform: translateX(50px) translateY(12px);
+                filter: saturate(150%);
+            }
         }
     }
 
     &__wrapper {
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-
-        min-width: convertToRem(260px);
-        min-height: convertToRem(200px);
-        padding: convertToRem(16px) convertToRem(10px) convertToRem(16px) convertToRem(16px);
-        border-radius: 6px;
-        margin-top: 2px;
-        background-color: $Project--Color-White;
-
         @media (min-width: $tablet) {
-            min-width: 100%;
-            min-height: max-content;
+            box-sizing: border-box;
+            background-color: $Project--Color-White;
+            border-radius: 6px;
+            padding: 0 10px 0 22px;
+        }
+    }
+
+    &__commercial {
+        margin-top: 16px;
+        padding: 0 16px;
+    }
+
+    &__description {
+        padding-right: 30px;
+        padding-bottom: 24px;
+        font-size: 14px;
+        line-height: 143%;
+        letter-spacing: 0.2px;
+        color: $Project--Color-TextPrimary;
+
+        @media(min-width: $tablet){
+            max-width: 421px;
+            padding-right: 0;
+        }
+    }
+
+    &__proposal {
+        border: 1px solid transparent;
+        text-align: left;
+        padding: 0;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: -0.2px;
+        font-weight: 600;
+        max-width: 200px;
+        background: url(../img/price/more.svg) no-repeat 105px 24px, transparent;
+        cursor: pointer;
+
+        margin-bottom: 6px;
+
+        @media(min-width: $tablet){
+            min-width: 316px;
+            background: url(../img/price/more.svg) no-repeat 290px -1px, transparent;
+        }
+
+        &:active {
+            transform: translateY(2px);
+            filter: saturate(150%);
+        }
+
+        &:focus,
+        &:hover {
+            outline: none;
+            box-shadow: 0 0 0 0.075rem #fff, 0 0 0 0.15rem $Project--Color-Focus;
         }
     }
 }
