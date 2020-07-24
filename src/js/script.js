@@ -10,43 +10,43 @@ class ModalConstructor {
     }
 
     activate() {
-        const awaitModalOpen = () => {
+        const modalOpenButtonClickHandler = () => {
             this.openButton.addEventListener(
                 "click",
                 (e) => {
                     e.preventDefault();
                     this.element.classList.add(this.activeElement);
                     wrapper.classList.add("wrapper--disabled");
-                    awaitClose();
+                    outOfModalClickHandler();
                 },
                 { once: true }
             );
         };
 
-        const awaitModalClose = (e) => {
+        const modalCloseButtonClickHandler = (e) => {
             e.preventDefault();
             if (e.keyCode === ESC_KEYCODE || e.target === wrapper || e.target === this.closeButton) {
-                window.removeEventListener("keydown", awaitModalClose);
-                window.addEventListener("click", awaitModalClose);
+                window.removeEventListener("keydown", modalCloseButtonClickHandler);
+                window.addEventListener("click", modalCloseButtonClickHandler);
                 this.element.classList.remove(this.activeElement);
                 wrapper.classList.remove("wrapper--disabled");
-                awaitModalOpen();
+                modalOpenButtonClickHandler();
             }
         };
 
-        const awaitClose = () => {
-            window.addEventListener("keydown", awaitModalClose);
-            window.addEventListener("click", awaitModalClose);
+        const outOfModalClickHandler  = () => {
+            window.addEventListener("keydown", modalCloseButtonClickHandler);
+            window.addEventListener("click", modalCloseButtonClickHandler);
         };
-        awaitModalOpen();
+        modalOpenButtonClickHandler();
     }
 }
 
-const menu = new ModalConstructor(".menu", "menu--active", "#openMenu", "#closeMenu *");
+const menu = new ModalConstructor(".menu", "menu--active", "#openMenu", "#closeMenu");
 menu.activate();
 
-const feedback = new ModalConstructor("#modalFeedback", "modal--active", "#openFeedback", "#closeFeedback *");
+const feedback = new ModalConstructor("#modalFeedback", "modal--active", "#openFeedback", "#closeFeedback");
 feedback.activate();
 
-const call = new ModalConstructor("#modalCall", "modal--active", "#openCall", "#closeCall *");
+const call = new ModalConstructor("#modalCall", "modal--active", "#openCall", "#closeCall");
 call.activate();
