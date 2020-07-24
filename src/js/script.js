@@ -10,11 +10,9 @@ class ModalConstructor {
     }
 
     activate() {
-        const modalOpenButtonClickHandler = () => {
-            this.openButton.addEventListener("click", (e) => {
-                e.preventDefault();
-                openModal();
-            }, { once: true });
+        const modalOpenButtonClickHandler = (e) => {
+            e.preventDefault();
+            openModal();
         };
 
         const openModal = () => {
@@ -40,14 +38,15 @@ class ModalConstructor {
         const closeModal = () => {
             this.element.classList.remove(this.activeElement);
             wrapper.classList.remove("wrapper--disabled");
-            modalOpenButtonClickHandler();
+            this.openButton.addEventListener("click", modalOpenButtonClickHandler, { once: true });
         };
-
-        modalOpenButtonClickHandler();
+        
+        this.openButton.addEventListener("click", modalOpenButtonClickHandler, { once: true });
     }
 }
 
 const menuModal = new ModalConstructor(".menu", "menu--active", "#openMenu", "#closeMenu");
+console.log("menuModal: ", menuModal);
 menuModal.activate();
 
 const feedbackModal = new ModalConstructor("#modalFeedback", "modal--active", "#openFeedback", "#closeFeedback");
