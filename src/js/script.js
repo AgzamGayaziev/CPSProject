@@ -19,34 +19,43 @@ class ModalConstructor {
             this.element.classList.add(this.activeElement);
             wrapper.classList.add("wrapper--disabled");
             outOfModalClickHandler();
+            outOfModalKeyDownHandler();
         };
 
         const outOfModalClickHandler = () => {
-            window.addEventListener("keydown", modalCloseButtonClickHandler);
-            window.addEventListener("click", modalCloseButtonClickHandler);
+            window.addEventListener("click", modalCloseClickHandler);
         };
 
-        const modalCloseButtonClickHandler = (e) => {
+        const outOfModalKeyDownHandler = () => {
+            window.addEventListener("keydown", modalCloseKeyDownHandler);
+        };
+
+        const modalCloseClickHandler = (e) => {
             e.preventDefault();
-            if (e.keyCode === ESC_KEYCODE || e.target === wrapper || e.target === this.closeButton) {
-                window.removeEventListener("keydown", modalCloseButtonClickHandler);
-                window.addEventListener("click", modalCloseButtonClickHandler);
+            if (e.target === wrapper || e.target === this.closeButton) {
+                window.removeEventListener("click", modalCloseClickHandler);
+                closeModal();
+            } 
+        }
+
+        const modalCloseKeyDownHandler = (e) => {
+            e.preventDefault();
+            if (e.keyCode === ESC_KEYCODE) {
+                window.removeEventListener("keydown", modalCloseKeyDownHandler);
                 closeModal();
             }
-        };
-
+        }
         const closeModal = () => {
             this.element.classList.remove(this.activeElement);
             wrapper.classList.remove("wrapper--disabled");
             this.openButton.addEventListener("click", modalOpenButtonClickHandler, { once: true });
         };
-        
+
         this.openButton.addEventListener("click", modalOpenButtonClickHandler, { once: true });
     }
 }
 
 const menuModal = new ModalConstructor(".menu", "menu--active", "#openMenu", "#closeMenu");
-console.log("menuModal: ", menuModal);
 menuModal.activate();
 
 const feedbackModal = new ModalConstructor("#modalFeedback", "modal--active", "#openFeedback", "#closeFeedback");
