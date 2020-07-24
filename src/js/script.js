@@ -11,11 +11,13 @@ class ModalConstructor {
 
     activate() {
         const modalOpenButtonClickHandler = () => {
-            this.openButton.addEventListener("click", openModal, { once: true });
+            this.openButton.addEventListener("click", (e) => {
+                e.preventDefault();
+                openModal();
+            }, { once: true });
         };
 
-        const openModal = (e) => {
-            e.preventDefault();
+        const openModal = () => {
             this.element.classList.add(this.activeElement);
             wrapper.classList.add("wrapper--disabled");
             outOfModalClickHandler();
