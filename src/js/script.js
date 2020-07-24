@@ -11,16 +11,19 @@ class ModalConstructor {
 
     activate() {
         const modalOpenButtonClickHandler = () => {
-            this.openButton.addEventListener(
-                "click",
-                (e) => {
-                    e.preventDefault();
-                    this.element.classList.add(this.activeElement);
-                    wrapper.classList.add("wrapper--disabled");
-                    outOfModalClickHandler();
-                },
-                { once: true }
-            );
+            this.openButton.addEventListener("click", openModal, { once: true });
+        };
+
+        const openModal = (e) => {
+            e.preventDefault();
+            this.element.classList.add(this.activeElement);
+            wrapper.classList.add("wrapper--disabled");
+            outOfModalClickHandler();
+        };
+
+        const outOfModalClickHandler = () => {
+            window.addEventListener("keydown", modalCloseButtonClickHandler);
+            window.addEventListener("click", modalCloseButtonClickHandler);
         };
 
         const modalCloseButtonClickHandler = (e) => {
@@ -28,25 +31,25 @@ class ModalConstructor {
             if (e.keyCode === ESC_KEYCODE || e.target === wrapper || e.target === this.closeButton) {
                 window.removeEventListener("keydown", modalCloseButtonClickHandler);
                 window.addEventListener("click", modalCloseButtonClickHandler);
-                this.element.classList.remove(this.activeElement);
-                wrapper.classList.remove("wrapper--disabled");
-                modalOpenButtonClickHandler();
+                closeModal();
             }
         };
 
-        const outOfModalClickHandler  = () => {
-            window.addEventListener("keydown", modalCloseButtonClickHandler);
-            window.addEventListener("click", modalCloseButtonClickHandler);
+        const closeModal = () => {
+            this.element.classList.remove(this.activeElement);
+            wrapper.classList.remove("wrapper--disabled");
+            modalOpenButtonClickHandler();
         };
+
         modalOpenButtonClickHandler();
     }
 }
 
-const menu = new ModalConstructor(".menu", "menu--active", "#openMenu", "#closeMenu");
-menu.activate();
+const menuModal = new ModalConstructor(".menu", "menu--active", "#openMenu", "#closeMenu");
+menuModal.activate();
 
-const feedback = new ModalConstructor("#modalFeedback", "modal--active", "#openFeedback", "#closeFeedback");
-feedback.activate();
+const feedbackModal = new ModalConstructor("#modalFeedback", "modal--active", "#openFeedback", "#closeFeedback");
+feedbackModal.activate();
 
-const call = new ModalConstructor("#modalCall", "modal--active", "#openCall", "#closeCall");
-call.activate();
+const callModal = new ModalConstructor("#modalCall", "modal--active", "#openCall", "#closeCall");
+callModal.activate();
